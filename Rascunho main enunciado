@@ -1,0 +1,153 @@
+Apoiando-se nos códigos desenvolvidos ao longo da disciplina, paralelize as funções multiplicarMPI (...) e multiplicarMPIblocos (...). 
+
+Espera-se que o aluno gere uma nova biblioteca chamada matriz-operacoes-MPI (matriz-operacoes-omp.h e matriz-operacoes-omp.c) com, pelo menos, as duas funções de multiplicação citadas acima.
+
+
+Rascunho do main_mpi.c que servirá como base para seus testes.
+
+(....)
+
+#include "matriz-operacoes-mpi.h"
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+int main(int argc, char *argv[]) {
+
+
+// %%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%
+
+	// DECLARAÇÃO de VARIÁVEIS
+
+  (....)
+
+// %%%%%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
+
+	if (argc != 3){
+
+		printf ("ERRO: Numero de parametros %s <matriz_a> <matriz_b>\n", argv[0]);
+
+		exit (1);
+
+	}
+
+ // %%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%
+
+        LER MATRIZ_A
+
+	LER MATRIZ_B
+
+       CRIAR MATRIZ_C
+
+// %%%%%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
+
+
+// %%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%
+
+// Multiplicação Sequencial
+
+ LOOP (10x)
+
+	MARCAR_TEMPO INICIO
+
+	MATRIZ_SeqC = MULTIPLICAR MATRIZ_A x MATRIZ_B
+
+	MARCAR_TEMPO FIM
+
+	GRAVAR_DISCO MATRIZ_SeqC
+
+// %%%%%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
+
+
+// %%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%
+
+// Multiplicação Sequencial em Bloco
+
+	DEFINIR N (numero de pedacos entre 2 e 20)
+
+ LOOP (10x)
+
+	MARCAR_TEMPO INICIO
+
+	PARTICIONAR_MATRIZ em N pedacos
+
+	MATRIZ_SeqBlC = MULTIPLICARBLOCOS MATRIZ_A x MATRIZ_B
+
+	MARCAR_TEMPO FIM
+
+	GRAVAR_DISCO MATRIZ_SeqBlC
+
+// %%%%%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
+
+
+// %%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%
+
+// Multiplicação OMP
+
+ LOOP (10x)
+
+        MARCAR_TEMPO INICIO
+
+	MATRIZ_MPIC = MULTIPLICARMPI MATRIZ_A x MATRIZ_B
+
+	MARCAR_TEMPO FIM
+
+	GRAVAR_DISCO MATRIZ_MPIC
+
+// %%%%%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
+
+
+// %%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%
+
+// Multiplicação OMP em Bloco
+
+	N = mesmo nro de blocos da Sequencial
+
+ LOOP (10x)
+
+	MARCAR_TEMPO INICIO
+
+	PARTICIONAR_MATRIZ em N pedacos
+
+	MATRIZ_MPIBlC = MULTIPLICARBLOCOSMPI MATRIZ_A x MATRIZ_B
+
+	MARCAR_TEMPO FIM
+
+	GRAVAR_DISCO MATRIZ_MPIBlC
+
+// %%%%%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
+
+// Comparar resultados e tempos
+
+        (print) COMPARAR MATRIZ_SeqC c/ MATRIZ_SeqBlC
+
+        (print) COMPARAR MATRIZ_SeqC c/ MATRIZ_MPIC
+
+	(print) COMPARAR MATRIZ_SeqC c/ MATRIZ_MPIBlC
+
+	(print) TEMPO_MEDIO MATRIZ_SeqC 
+
+	(print) TEMPO_MEDIO MATRIZ_SeqBlC
+
+	(print) TEMPO_MEDIO MATRIZ_MPIC
+
+	(print) TEMPO_MEDIO MATRIZ_MPIBlC
+
+        (print) SPEEDUP (MATRIZ_C)
+
+        (print) SPEEDUP (MATRIZ_BLC)
+
+  // %%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%
+
+// LIBERAR MEMÓRIA
+
+	LIBERAR MATRIZES
+
+	FECHAR ARQUIVOS
+
+// %%%%%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
+
+	return 0;
+
+}
+
+
