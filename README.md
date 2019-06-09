@@ -27,7 +27,7 @@ Após compilação para gerar os arquivos de entrada basta executar o comando ab
 
 > $./geraMatriz2 128 128
 
-> O primeiro parâmetro corresponde ao executável gerado na compilação, ja o segundo e o terceiro parâmetros correspondem as dimensões da matriz N x M (128 x 128).
+O primeiro parâmetro corresponde ao executável gerado na compilação, ja o segundo e o terceiro parâmetros correspondem as dimensões da matriz N x M (128 x 128).
 
 São necessários dois arquivos de entrada para execução da aplicação principal *main_matriz.c*.
 
@@ -46,9 +46,9 @@ Para executar localmente em ambiente de memória compartilhada basta navegar at�
 ### Execução distribuída
 O MPI apesar de funcionar em ambientes de memória compartilhada é voltado para ambientes de memória distribuída. Para executar de maneira distribuída são necessários alguns cuidados.
 
-> Os executáveis e demais códigos devem estar em diretórios com os mesmos caminhos em todos os *hosts* para que todos sejam executados corretamente.
+Os executáveis e demais códigos devem estar em diretórios com os mesmos caminhos em todos os *hosts* para que todos sejam executados corretamente.
 
-> É necessário passar como parâmetro a lista de *hosts* e a interface de rede pela qual a comunicação irá acontecer.
+É necessário passar como parâmetro a lista de *hosts* e a interface de rede pela qual a comunicação irá acontecer.
 
 Para executar a aplicação basta executar no terminal linux o comando abaixo:
 
@@ -62,13 +62,11 @@ __Ao executar matenha os arquivos e executáveis em diretórios com caminhos id�
 
 ### Execuções em série
 
-> Foi criado um script para facilitar as execuções, nele são criados arquivos para utilizar nas execuções onde o primeiro arquivo é criado, renomeado e outro arquivo gerado em seguida.
+Foi criado um script para facilitar as execuções, nele são criados arquivos para utilizar nas execuções onde o primeiro arquivo é criado, renomeado e outro arquivo gerado em seguida.
 
-> Para executar o script basta digita navegar via até o diretório onde os arquivos se encontram e executar o comando:
+Para executar o script basta digita navegar via até o diretório onde os arquivos se encontram e executar o comando:
 
-> $ bash script.sh
-
-> Serão executadas 4 variações dos testes e os resultados estarão impressos em arquivos de texto com nome indicando a dimensão das matrizes quadradas e o número de threads.
+> $ bash executa.sh
 
 ###RESTRIÇÕES
 
@@ -79,18 +77,18 @@ __A versão de multiplicação em blocos pode ter seu desempenho melhorado ou de
 
 ## Remoção dos arquivos
 
-> Para remover os arquivos criados basta executar o comando abaixo
+Para remover os arquivos criados basta executar o comando abaixo
 
 > $ make clean 
 
 
 ## Contato
 
-> Quaisquer dúvidas ou problemas favor entrar em contato pelo endereço escobarvasques@gmail.com.
+Quaisquer dúvidas ou problemas favor entrar em contato pelo endereço escobarvasques@gmail.com.
 
 ## Autor
 
-> Gabriel Escobar.
+Gabriel Escobar.
 
 ## Data
-> 07/06/2019
+07/06/2019
