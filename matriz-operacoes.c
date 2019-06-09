@@ -159,12 +159,12 @@ int multiplicarKJI (int **mat_a, int **mat_b, int **mat_c, int N, int L, int M) 
 void multiplicaBloco(int size, int n, int **A, int **B, int **C, int TILE){
 	int i, j, k, x, y, z;
 
-    if(size % TILE != 0){
-       TILE = 4;
+    if(size % 16 == 0){
+        TILE = 16;
     }
-    if(size == 10){
-        TILE = 2;
-    }
+    //if(size % 25 == 0){
+    //    TILE = 25;
+    //}
 
 	for(i = 0; i < size; i += TILE)
         for(k = 0; k < size; k += TILE)	    
