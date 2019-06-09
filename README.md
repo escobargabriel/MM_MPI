@@ -27,11 +27,11 @@ Após compilação para gerar os arquivos de entrada basta executar o comando ab
 
 > $./geraMatriz2 128 128
 
-O primeiro parâmetro corresponde ao executável gerado na compilação, ja o segundo e o terceiro parâmetros correspondem as dimensões da matriz N x M (128 x 128).
+O primeiro parâmetro corresponde ao executável gerado na compilação, ja o segundo e o terceiro parâmetros correspondem as dimensões da matriz N x N (128 x 128).
 
 São necessários dois arquivos de entrada para execução da aplicação principal *main_matriz.c*.
 
-O arquivo gerado pela aplicação *geraMatriz2.c* possui por padrão o nome 128x128-mat.map, onde 128x128 são as dimensões NxM.
+O arquivo gerado pela aplicação *geraMatriz2.c* possui por padrão o nome 128x128-mat.map, onde 128x128 são as dimensões NxN.
 
 Para executar a aplicação principal é preciso gerar um arquivo com as dimensões NxM, onde N e M devem ser iguais (matrizes quadradas), renomear o arquivo manualmente, e gerar novo arquivo com as mesmas dimensões do primeiro para garantir a compatibilidade dos arquivos de entrada. Outra possibilidade é gerar um único arquivo de entrada com uma matriz quadrada e utilizar o mesmo nos dois parâmetros de arquivos de entrada.
 
@@ -41,7 +41,7 @@ Para executar localmente em ambiente de memória compartilhada basta navegar at�
 
 > $ mpirun -np 4 main_matriz 128x128-mat.map 128x128-mat1.map 
 
-> O primeiro parâmetro para execução é mpirun, logo após -np 4 (número de processos = 4) seguido do executável e seus respectivos parâmetros (main_matriz NxN-mat.map NxN-mat.map
+> O primeiro parâmetro para execução é mpirun, logo após -np 4 (número de processos = 4) seguido do executável e seus respectivos parâmetros (main_matriz NxN-mat.map NxN-mat.map)
 
 ### Execução distribuída
 O MPI apesar de funcionar em ambientes de memória compartilhada é voltado para ambientes de memória distribuída. Para executar de maneira distribuída são necessários alguns cuidados.
