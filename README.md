@@ -33,7 +33,7 @@ São necessários dois arquivos de entrada para execução da aplicação princi
 
 O arquivo gerado pela aplicação *geraMatriz2.c* possui por padrão o nome 128x128-mat.map, onde 128x128 são as dimensões NxN.
 
-Para executar a aplicação principal é preciso gerar um arquivo com as dimensões NxM, onde N e M devem ser iguais (matrizes quadradas), renomear o arquivo manualmente, e gerar novo arquivo com as mesmas dimensões do primeiro para garantir a compatibilidade dos arquivos de entrada. Outra possibilidade é gerar um único arquivo de entrada com uma matriz quadrada e utilizar o mesmo nos dois parâmetros de arquivos de entrada.
+Para executar a aplicação principal é preciso gerar um arquivo com as dimensões NxN (matriz quadradas), renomear o arquivo manualmente, e gerar novo arquivo com as mesmas dimensões do primeiro para garantir a compatibilidade dos arquivos de entrada. Outra possibilidade é gerar um único arquivo de entrada com uma matriz quadrada e utilizar o mesmo nos dois parâmetros de arquivos de entrada.
 
 
 ### Execução Isolada
