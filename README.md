@@ -52,10 +52,11 @@ Os executáveis e demais códigos devem estar em diretórios com os mesmos camin
 
 Para executar a aplicação basta executar no terminal linux o comando abaixo:
 
-> mpirun --mca btl ^openib --mca btl_tcp_if_include ens3 -np 4 --map-by node --hostfile /home/aluno10/mpi/hostfile /home/aluno10/mpi/main_matriz /home/aluno10/mpi/3000x3000-mat.map /home/aluno10/mpi/3000x3000-mat.map
+> $ mpirun --mca btl ^openib --mca btl_tcp_if_include ens3 -np 4 --map-by node --hostfile /home/aluno10/mpi/hostfile /home/aluno10/mpi/main_matriz /home/aluno10/mpi/3000x3000-mat.map /home/aluno10/mpi/3000x3000-mat.map
 
 > o primeiro parâmetro é mpirun seguido pelos parâmetros de rede (--mca btl ^openib --mca btl_tcp_if_include ens3), modo de mapeamento dos processos (--map-by node), arquivo de hosts (--hostfile /home/aluno10/mpi/hostfile). Os últimos parâmetros são o executável seguido dos arquivos de entrada (/home/aluno10/mpi/main_matriz /home/aluno10/mpi/3000x3000-mat.map /home/aluno10/mpi/3000x3000-mat.map)
 
+> No comando acima a interface de rede utilizada é identificada como *ens3*. Para verificar a interface de rede correta execute o comando ifconfig e verifique o nome correta da interface de rede presente no ambiente de testes que se pretende utilizar
 __Importante!__
 
 __Ao executar matenha os arquivos e executáveis em diretórios com caminhos idênticos e ao passar como parâmetros o executável e os arquivos passa o caminho completo para garantir que a aplicação conseguirá acessar__   
