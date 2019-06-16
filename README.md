@@ -59,7 +59,7 @@ Para executar a aplicação basta executar no terminal linux o comando abaixo:
 > No comando acima a interface de rede utilizada é identificada como *ens3*. Para verificar a interface de rede correta execute o comando ifconfig e verifique o nome correto da interface de rede presente no ambiente de testes que se pretende utilizar.
 __Importante!__
 
-__Ao executar matenha os arquivos e executáveis em diretórios com caminhos idênticos e ao passar como parâmetros o executável e os arquivos passa o caminho completo para garantir que a aplicação conseguirá acessar__   
+__Ao executar matenha os arquivos e executáveis em diretórios com caminhos idênticos e ao passar como parâmetros o executável e os arquivos passar o caminho completo para garantir que a aplicação conseguirá acessar__   
 
 ### Execuções em série
 
@@ -69,7 +69,7 @@ Para executar o script basta digita navegar via até o diretório onde os arquiv
 
 > $ bash executa.sh
 
-###RESTRIÇÕES
+### Restrições
 
 __Importante!__
 
